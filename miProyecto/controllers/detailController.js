@@ -1,7 +1,7 @@
-const controller = {
+const detailController = {
     index: function (req, res) {
-        res.render ('index')
+        res.render ('detail')
     }
 }
 
-module.exports = controller
+module.exports = detailController
