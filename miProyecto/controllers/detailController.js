@@ -1,6 +1,12 @@
 const detailController = {
-    index: function (req, res) {
-        res.render ('detail')
+    user: function (req, res) {
+        res.render ('detailUser')
+    },
+    add: function (req, res) {
+        res.render ('detailAdd')
+    },
+    post: function (req, res) {
+        res.render ('detailPost')
     }
 }
 
