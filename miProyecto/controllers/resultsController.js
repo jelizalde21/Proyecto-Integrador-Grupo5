@@ -1,4 +1,4 @@
-const db = require('../data/module');
+const db = require('../data/usuarios');
 
 const controller = {
     index: function (req, res) {

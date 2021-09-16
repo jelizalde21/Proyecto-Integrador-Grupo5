@@ -1,4 +1,4 @@
-const Data = {
+const comments = {
 	lista:	[
 	{
 		id: 1,
@@ -73,4 +73,4 @@ const Data = {
 	]
 }
 
-module.exports = Data;
+module.exports = comments;

@@ -58,3 +58,6 @@ header nav form input, header nav form ::placeholder, header nav form span{
     text-decoration: none;
     cursor: pointer;
 }
+.uk-background-primary {
+    background-color: #f0a11e;
+}
