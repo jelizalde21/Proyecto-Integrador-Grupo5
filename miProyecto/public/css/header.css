@@ -54,10 +54,10 @@ header nav form input, header nav form ::placeholder, header nav form span{
 }
 
 .uk-link, a {
-    color: #ffffff;
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
 .uk-background-primary {
-    background-color: #f0a11e;
+    background-color: #611707;
 }
