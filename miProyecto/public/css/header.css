@@ -60,6 +60,8 @@ header nav form input, header nav form ::placeholder, header nav form span{
 }
 .uk-background-primary {
     background-color: #611707;
+    position: fixed;
+    width: 100%;
 }
 
 .uk-button-primary {
