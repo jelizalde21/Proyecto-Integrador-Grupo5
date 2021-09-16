@@ -61,3 +61,10 @@ header nav form input, header nav form ::placeholder, header nav form span{
 .uk-background-primary {
     background-color: #611707;
 }
+
+.uk-button-primary {
+    background-color:  #611707 ;
+    color: #fff;
+    border: 1px solid transparent
+
+}
