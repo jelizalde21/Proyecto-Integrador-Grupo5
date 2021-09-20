@@ -2,73 +2,65 @@ const posts = {
 	lista:	[
 	{
 		id: 1,
-		usuario: "Javo Elizalde",
+		idUsuario: 1,
 		foto: "./images/foto1.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
 	},
-    {
+	{
 		id: 2,
-		usuario: "Horacio Barbeito",
+		idUsuario: 2,
 		foto: "./images/foto2.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
-	},
-    {
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
+	},{
 		id: 3,
-		usuario: "Eugenia Garcia B.",
+		idUsuario: 3,
 		foto: "./images/foto3.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
-	},
-    {
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
+	},{
 		id: 4,
-		usuario: "Javo Elizalde",
+		idUsuario: 4,
 		foto: "./images/foto4.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
-	},
-    {
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
+	},{
 		id: 5,
-		usuario: "Santiago Matheu",
+		idUsuario: 5,
 		foto: "./images/foto5.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
-	},
-    {
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
+	},{
 		id: 6,
-		usuario: "Tomás Poitevin",
+		idUsuario: 6,
 		foto: "./images/foto6.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
-	},
-    {
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
+	},{
 		id: 7,
-		usuario: "Braian Gomez",
+		idUsuario: 7,
 		foto: "./images/foto7.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
-	},
-    {
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
+	},{
 		id: 8,
-		usuario: "Agustin Pittari",
+		idUsuario: 8,
 		foto: "./images/foto8.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
-	},
-    {
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
+	},{
 		id: 9,
-		usuario: "Ale Vivione",
+		idUsuario: 9,
 		foto: "./images/foto9.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
-	},
-    {
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
+	},{
 		id: 10,
-		usuario: "Darío Sus z",
+		idUsuario: 10,
 		foto: "./images/foto10.jpg",
-		tipo: "Whiskey",
-		comentarios: "Es el mejor que probé en estos años"
+		pie_de_foto: "Es el mejor que probé en estos años",
+		fecha: 21/07/35
 	}
 	]
 }
