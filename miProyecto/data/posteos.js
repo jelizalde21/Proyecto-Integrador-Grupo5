@@ -62,7 +62,16 @@ const posts = {
 		pie_de_foto: "Es el mejor que probé en estos años",
 		fecha: 21/07/35
 	}
-	]
+	],
+	findById: function (idPost) {
+		let results = "";
+		for (let i = 0; i < posts.lista.length; i++) {
+			if (posts.lista[i].id == idPost) {
+				results = posts.lista[i];
+			}
+		}
+		return results;
+	}
 }
 
 module.exports = posts;

@@ -3,13 +3,17 @@ const posts = require('../data/posteos')
 
 const detailController = {
     user: function (req, res) {
-        res.render ('detailUser' /*, {users: data.lista}*/)
+        res.render ('detailUser', {listaPosts: posts.lista})
     },
     add: function (req, res) {
         res.render ('detailAdd')
     },
     post: function (req, res) {
-        res.render ('detailPost'/*, {posts: posts.lista}*/)
+        let idPost = req.params.id;
+        let postEncontrado = posts.findById(idPost);
+
+       res.render ('detailPost', {listaPost: postEncontrado})
+       /*res.send(postEncontrado);*/
     }
 }
 

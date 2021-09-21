@@ -3,7 +3,7 @@ const posts = require('../data/posteos');
 
 const indexController = {
     index: function (req, res) {
-        res.render ('index', {users: data.lista})
+        res.render ('index', {users: data.lista, listaPosts: posts.lista})
     },
     /*show: function (req, res) {
        res.render ('index', {posts: posts.lista})
