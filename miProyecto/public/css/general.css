@@ -2,6 +2,9 @@
     font-family: 'Rubik', sans-serif;
     box-sizing: border-box;
 }
+body{
+    background-image: url("/images/fondo3.jpg");    
+}
 main{
     margin-bottom: 40px;
 }
