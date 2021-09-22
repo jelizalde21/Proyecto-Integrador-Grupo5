@@ -16,9 +16,24 @@
     border: none;
     border: solid 1px var(--gray);
     padding: 0 15px;
+    background-color: rgba(151, 148, 148, 0.507);
   }
 textarea.form-input {
     min-height: 140px;
     resize: vertical;
     padding: 15px;
+  }
+
+  .input-button{
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px var(--gray);
+    padding: 0 15px;
+    background-color: #611707;
+    color: white;
   }

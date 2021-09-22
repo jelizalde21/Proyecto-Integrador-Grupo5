@@ -4,6 +4,6 @@ const controller = require('../controllers/resultsController');
 
 /* GET home page. */
 router.get('/', controller.index);
-router.get('/results/id/:id', controller.show);
+router.get('/id/:id', controller.show);
 
 module.exports = router;
