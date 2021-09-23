@@ -3,7 +3,7 @@ const posts = require('../data/posteos')
 
 const detailController = {
     user: function (req, res) {
-        res.render ('detailUser', {listaPosts: posts.lista})
+        res.render ('detailUser', {users: data.lista, listaPosts: posts.lista})
     },
     add: function (req, res) {
         res.render ('detailAdd')
