@@ -44,7 +44,7 @@ const users = {
 	},
     {
 		id: 7,
-		usuario: "Braian Gomez",
+		usuario: "Brian Gomez",
 		email: "",
 		contraseña: "",
 		fecha: 06/02/65 
@@ -58,7 +58,7 @@ const users = {
 	},
     {
 		id: 9,
-		usuario: "Ale Vivione",
+		usuario: "Ale Vivone",
 		email: "",
 		contraseña: "",
 		fecha: 06/02/65
