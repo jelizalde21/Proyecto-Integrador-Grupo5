@@ -19,11 +19,11 @@
                                 <div>
                                     <img src="/images/logo1.jpg" alt="" width="20%">
                                 </div>
-                                <h4><a href="/detail/User"> <%= users[i].usuario %> </a></h4>
+                                <h4><a href="/detail/user"> <%= users[i].usuario %> </a></h4>
                                 
                             </div>
                             <div class="post-body uk-flex uk-flex-center">
-                                <a href="/detail/Post/id/<%= users[i].id %>">
+                                <a href="/detail/post/id/<%= users[i].id %>">
                                     <img src=" <%= listaPosts[i].foto %> " alt="">
                                 </a>
                             </div>
@@ -31,11 +31,11 @@
                                 <ul class="post-icons uk-flex uk-flex-between">
                                     <li><span class="" uk-icon="icon:heart; ratio: 1.3"></span>
                                     </li>
-                                    <li><a href="/detail/Post/id/<%= users[i].id %>"><span class="" uk-icon="icon:comments; ratio: 1.3"></span></a>
+                                    <li><a href="/detail/post/id/<%= users[i].id %>"><span class="" uk-icon="icon:comments; ratio: 1.3"></span></a>
                                     </li>
                                 </ul>
                                 <div class="post-pie uk-flex">
-                                    <h5 class="uk-width-1-6"><a href="/detail/User"> <%= users[i].usuario %> </a></h5>
+                                    <h5 class="uk-width-1-6"><a href="/detail/user"> <%= users[i].usuario %> </a></h5>
                                     <p class="uk-width-5-6">Pie de post</p>
                                 </div>
                             </div>
@@ -43,14 +43,14 @@
                                 <h6>Comentarios:</h6>
                                 <ul>
                                     <li>
-                                        <a href="/detail/User"> <%= users[i].usuario %> </a>
+                                        <a href="/detail/user"> <%= users[i].usuario %> </a>
                                         <p>Comentario 1</p>
                                     </li>
                                     <li>
-                                        <a href="/detail/User"> <%= users[i].usuario %> </a>
+                                        <a href="/detail/user"> <%= users[i].usuario %> </a>
                                         <p>Comentario 2</p>
                                     </li>
-                                    <a href="/detail/Post/id/<%= users[i].id %>">Ver más...</a>
+                                    <a href="/detail/post/id/<%= users[i].id %>">Ver más...</a>
                                 </ul>
                             </div>
                         </article>

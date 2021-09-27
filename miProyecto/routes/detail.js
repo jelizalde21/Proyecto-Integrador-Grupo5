@@ -4,8 +4,8 @@ const detailController = require('../controllers/detailController');
 
 
 /* GET home page. */
-router.get('/User', detailController.user);
-router.get('/Add', detailController.add);
-router.get('/Post/id/:id', detailController.post);
+router.get('/user', detailController.user);
+router.get('/add', detailController.add);
+router.get('/post/id/:id', detailController.post);
 
 module.exports = router;
