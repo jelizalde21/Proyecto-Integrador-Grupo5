@@ -5,6 +5,7 @@ const users = {
 		usuario: "Javo Elizalde",
 		email: "",
 		contraseña: "",
+		picture: "/images/ajavo.jpg",
 		fecha: 21/07/01
 	},
     {
@@ -12,6 +13,7 @@ const users = {
 		usuario: "Horacio Barbeito",
 		email: "",
 		contraseña: "",
+		picture: "/images/ahoras.jpg",
 		fecha: 06/02/65
 	},
     {
@@ -19,6 +21,7 @@ const users = {
 		usuario: "Eugenia Garcia B.",
 		email: "",
 		contraseña: "",
+		picture: "/images/aeuge.jpg",
 		fecha: 06/02/65
 		},
     {
@@ -26,6 +29,7 @@ const users = {
 		usuario: "Javo Elizalde",
 		email: "",
 		contraseña: "",
+		picture: "/images/ajavo.jpg",
 		fecha: 06/02/65
 	},
     {
@@ -33,6 +37,7 @@ const users = {
 		usuario: "Santiago Matheu",
 		email: "",
 		contraseña: "",
+		picture: "/images/asanti.jpg",
 		fecha: 06/02/65
 	},
     {
@@ -40,6 +45,7 @@ const users = {
 		usuario: "Tomás Poitevin",
 		email: "",
 		contraseña: "",
+		picture: "/images/atomi.jpg",
 		fecha: 06/02/65
 	},
     {
@@ -47,6 +53,7 @@ const users = {
 		usuario: "Brian Gomez",
 		email: "",
 		contraseña: "",
+		picture: "/images/abraian.jpg",
 		fecha: 06/02/65 
 	},
     {
@@ -54,6 +61,7 @@ const users = {
 		usuario: "Agustin Pittari",
 		email: "",
 		contraseña: "",
+		picture: "/images/aagus.jpg",
 		fecha: 06/02/65
 	},
     {
@@ -61,6 +69,7 @@ const users = {
 		usuario: "Ale Vivone",
 		email: "",
 		contraseña: "",
+		picture: "/images/aale.jpg",
 		fecha: 06/02/65
 	},
     {
@@ -68,6 +77,7 @@ const users = {
 		usuario: "Darío Sus z",
 		email: "",
 		contraseña: "",
+		picture: "/images/bichote.jpg",
 		fecha: 06/02/65
 	}
 	]
