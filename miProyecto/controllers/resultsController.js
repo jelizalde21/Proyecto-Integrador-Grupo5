@@ -1,4 +1,7 @@
-const db = require('../data/usuarios');
+const db = require('../database/models'); //relaciona controlador con modelos
+const Op = db.Sequelize.Op;
+
+const results = require('../data/usuarios');
 
 const controller = {
     index: function (req, res) {

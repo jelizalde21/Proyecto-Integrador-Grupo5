@@ -1,3 +1,6 @@
+const db = require('../database/models'); // relaciona controlador con modelos
+const Op = db.Sequelize.Op;
+
 const data = require('../data/usuarios')
 const posts = require('../data/posteos')
 
