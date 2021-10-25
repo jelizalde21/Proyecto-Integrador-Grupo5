@@ -26,9 +26,24 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'El mensaje oculto',
-  resave: false,
-  saveUninitalized:true
+  resave: true,
+  saveUninitialized:false,
 }));
+
+app.use(function (req, res, next) {
+  if (req.session.usuario) {
+    res.locals = {
+      logueado: true,
+      miUsuario: req.session.usuario
+    }
+  } else {
+    res.locals = {
+      logueado: false
+    }
+  }
+
+  return next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

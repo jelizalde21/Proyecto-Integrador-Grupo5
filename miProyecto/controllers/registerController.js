@@ -1,6 +1,7 @@
 const db = require('../database/models'); //relaciona controlador con modelos
 const register = db.Register
 const Op = db.Sequelize.Op;
+const bcrypt = require('bcryptjs');
 
 const registerController = {
     index: function (req, res) {
@@ -20,13 +21,14 @@ const registerController = {
                             .then(resultado => {
                                 if (!resultado) {
                                     db.User.create({
-                                        name: req.body.nombre,
-                                        last_name: req.body.apellido,
+                                        nombre: req.body.nombre,
+                                        apellido: req.body.apellido,
+                                        username: req.body.username,
                                         email: req.body.email,
-                                        nacimiento: req.body.fecha,
-                                        username: req.body.usuario,
-                                        cover: req.file.filename,
-                                        password: passEncriptada,
+                                        contraseña: passEncriptada,
+                                        picture: req.file.picture,
+                                        fecha: req.body.fecha,
+                                        
                                     }).then(user => {
                                         req.session.usuario = user
 

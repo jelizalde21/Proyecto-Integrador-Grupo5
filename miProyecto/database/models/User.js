@@ -27,13 +27,14 @@ module.exports = (sequelize, dataTypes) => {
         fecha: {
             type: dataTypes.DATE
         },
-        numero: {
+        nro_posts: {
             type: dataTypes.INTEGER
         }
     },
 
     {
         tableName: "users",
+        timestamps: false,
     });
     
     return User
