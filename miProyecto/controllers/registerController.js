@@ -7,6 +7,11 @@ const registerController = {
     index: function (req, res) {
         res.render ('register')
     },
+
+    store: function(rq, res){
+        res.send(req.file)
+    },
+
     createUser: (req, res) => {
         if (req.body.nombre && req.body.apellido && req.body.email && req.body.fecha && req.body.usuario && req.body.contraseña) {
             if (req.body.contraseña.length >= 4) {
@@ -26,7 +31,7 @@ const registerController = {
                                         username: req.body.username,
                                         email: req.body.email,
                                         contraseña: passEncriptada,
-                                        picture: req.file.picture,
+                                        picture: req.file.filename,
                                         fecha: req.body.fecha,
                                         
                                     }).then(user => {
