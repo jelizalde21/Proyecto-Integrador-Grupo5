@@ -52,11 +52,10 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "comment_user_id"
         })
 
-    }
-/*,
+    },
     User.associate = function(models){
 
-        User.belongsToMany(models.Users, {
+        User.belongsToMany(models.User, {
             as: "posteoss",
             through: "Comment",
             foreignKey: "comment_post_id",
@@ -64,7 +63,7 @@ module.exports = (sequelize, dataTypes) => {
         })
 
     }
-     */
+    
     return User
 };
 
