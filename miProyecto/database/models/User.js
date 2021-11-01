@@ -37,6 +37,34 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     });
     
+    User.associate = function(models){
+
+        User.hasMany(models.Post, {
+            as: "usuarios",
+            foreignKey: "user_post_id"
+        })
+
+    },
+    User.associate = function(models){
+
+        User.hasMany(models.Comment, {
+            as: "usuarioss",
+            foreignKey: "comment_user_id"
+        })
+
+    }
+/*,
+    User.associate = function(models){
+
+        User.belongsToMany(models.Users, {
+            as: "posteoss",
+            through: "Comment",
+            foreignKey: "comment_post_id",
+            anotherKey: "comment_user_id"
+        })
+
+    }
+     */
     return User
 };
 

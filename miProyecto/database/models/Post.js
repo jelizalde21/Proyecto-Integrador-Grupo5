@@ -19,7 +19,15 @@ module.exports = (sequelize, dataTypes) => {
         
         {
         tableName: "posts",
+        timestamps: false
         });
+
+    Post.associate = function(models){
+        Post.belongsTo(models.User, {
+            as: "posteos",
+            foreignKey: "user_post_id"
+        })
+    }    
         
     return Post
     

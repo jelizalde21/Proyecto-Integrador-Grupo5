@@ -17,6 +17,22 @@ const detailController = {
 
        res.render ('detailPost', {listaPost: postEncontrado})
        /*res.send(postEncontrado);*/
+    },
+    posteos: function(req, res){
+        db.User.findAll({
+            include: [{association: "posteos"}]
+        })
+        .then(posteoss =>{
+            res.send(posteoss)
+        })
+    },
+    comentarios: function(req, res){
+        db.User.findAll({
+            include: [{association: "comentarios"}]
+        })
+        .then(comentarioss =>{
+            res.send(comentarioss)
+        })
     }
 }
 
