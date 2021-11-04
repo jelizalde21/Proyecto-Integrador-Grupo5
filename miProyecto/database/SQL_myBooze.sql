@@ -11,7 +11,7 @@ email VARCHAR (150) unique NOT NULL,
 contraseña VARCHAR (150) NOT NULL,
 picture VARCHAR (150),
 fecha DATE NOT NULL,
-numero INT,
+nro_posts INT,
 PRIMARY KEY (users_id)
 );
 
