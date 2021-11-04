@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     const Post = sequelize.define('Post', {
 
-        id: {
+        post_id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER

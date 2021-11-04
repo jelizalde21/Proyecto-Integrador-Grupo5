@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT exists myBooze;
 USE myBooze;
 
 CREATE TABLE users (
-id INT UNSIGNED AUTO_INCREMENT,
+users_id INT UNSIGNED AUTO_INCREMENT,
 nombre VARCHAR(100) NOT NULL,
 apellido VARCHAR(100) NOT NULL,
 username VARCHAR (100) unique NOT NULL,
@@ -12,28 +12,28 @@ contraseña VARCHAR (150) NOT NULL,
 picture VARCHAR (150),
 fecha DATE NOT NULL,
 numero INT,
-PRIMARY KEY (id)
+PRIMARY KEY (users_id)
 );
 
 CREATE TABLE posts (
-id INT UNSIGNED AUTO_INCREMENT,
+post_id INT UNSIGNED AUTO_INCREMENT,
 picture CHAR,
 caption VARCHAR (1000),
 fecha DATE NOT NULL,
 user_post_id INT UNSIGNED NOT NULL,
-PRIMARY KEY(id),
-FOREIGN KEY (user_post_id) REFERENCES users (id)
+PRIMARY KEY(post_id),
+FOREIGN KEY (user_post_id) REFERENCES users (users_id)
 );
 
 CREATE TABLE comments (
-id INT UNSIGNED AUTO_INCREMENT,
+comment_id INT UNSIGNED AUTO_INCREMENT,
 comentario VARCHAR (500),
 fecha DATE NOT NULL,
 comment_post_id INT UNSIGNED NOT NULL,
 comment_user_id INT UNSIGNED NOT NULL,
-PRIMARY KEY (id),
-FOREIGN KEY (comment_post_id) REFERENCES posts (id),
-FOREIGN KEY (comment_user_id) REFERENCES users (id)
+PRIMARY KEY (comment_id),
+FOREIGN KEY (comment_post_id) REFERENCES posts (post_id),
+FOREIGN KEY (comment_user_id) REFERENCES users (users_id)
 );
 
 INSERT INTO users VALUES (DEFAULT , 'Horacio Barbeito', 'Horacio','Barbeito','hbarbeito@udesa.edu.ar', 'myBooze', '','2002-01-09', 100);
