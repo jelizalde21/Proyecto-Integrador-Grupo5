@@ -8,7 +8,7 @@ const registerController = {
         res.render ('register')
     },
 
-    store: function(rq, res){
+    store: function(req, res){
         res.send(req.file)
     },
 
@@ -28,7 +28,7 @@ const registerController = {
                                     db.User.create({
                                         nombre: req.body.nombre,
                                         apellido: req.body.apellido,
-                                        username: req.body.username,
+                                        username: req.body.usuario,
                                         email: req.body.email,
                                         contraseña: passEncriptada,
                                         picture: req.file.filename,

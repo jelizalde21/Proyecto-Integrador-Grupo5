@@ -19,7 +19,7 @@ let upload = multer({ storage: storage })
 
 /* GET home page. */
 router.get('/', controller.index);
-router.post('/', controller.createUser);
-router.post('/', upload.single('portada'), controller.store)
+router.post('/', upload.single('portada'), controller.createUser);
+router.post('/register', upload.single('portada'), controller.store)
 
 module.exports = router;
