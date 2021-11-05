@@ -1,28 +1,55 @@
 const db = require('../database/models'); //relaciona controlador con modelos
 const register = db.Register;
 const op = db.Sequelize.Op;
+const bcrypt = require('bcryptjs')
 
-const loginController = {
-    index: function (req, res) {
-        res.render ('login')
-    },
-    login: function(req, res){
-        db.Register.create({
-            title: req.body.title,
-            awards: req.body.awards,
-            rating: req.body.rating,
-            release_date: req.body.release_date,
-            genre_id: req.body.genre_id,
-            length: req.body.length
-        })
-        .then(register => {
+const controller = {
+    index: (req, res) => {
+        if (!req.session.usuario) {
+            res.render('login', {
+                error: null
+            })
+        } else {
             res.redirect('/')
-        })
-        .catch(err => {
-            console.log(err);
-            res.send(err)
-        })
-    }
-}
+        }
+    },
+    login: (req, res) => {
+        if (req.body.usuario && req.body.contraseña) {
+            db.User.findOne({
+                    where: [{
+                        username: req.body.usuario
+                    }]
+                })
+                .then(usuario => {
+                    if (usuario) {
+                        if (bcrypt.compareSync(req.body.contraseña, usuario.password)) {
+                            req.session.usuario = usuario
+                            if (req.body.remember) {
+                                res.cookie('userId', usuario.id, {
+                                    maxAge: 1000 * 60 * 5
+                                });
+                            }
+                            res.redirect('/')
+                        } else {
+                            res.render('login', {
+                                error: 'La contraseña es incorrecta'
+                            })
+                        }
 
-module.exports = loginController
+                    } else {
+                        res.render('login', {
+                            error: 'El nombre de usuario es incorrecto'
+                        })
+                    }
+                })
+        } else {
+            res.render('login', {
+                error: 'Ningun campo puede estar vacio'
+            })
+        }
+
+
+        ;
+    },
+}
+module.exports = controller;

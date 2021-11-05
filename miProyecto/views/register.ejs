@@ -31,6 +31,8 @@
                             
 						<div>Confirmar contraseña: <input class="form-input" type="password" name="confirContra" id="" required placeholder="*****"></div>
                             
+                        <% if (error) { %> <h4 style="color: red;"> <%= error %> </h4> <% } %>
+
 						<div><input class="input-button" type="submit" value="Registrate"></div>
                             
             
