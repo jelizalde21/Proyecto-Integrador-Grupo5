@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 
 const registerController = {
     index: function (req, res) {
-        res.render ('register')
+        res.render ('register', {error: null})
     },
 
     store: function(req, res){
