@@ -1,7 +1,7 @@
 const db = require('../database/models'); //relaciona controlador con modelos
 const register = db.Register;
 const op = db.Sequelize.Op;
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
 
 const controller = {
     index: (req, res) => {
