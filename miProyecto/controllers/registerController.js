@@ -1,5 +1,5 @@
 const db = require('../database/models'); //relaciona controlador con modelos
-const register = db.Register
+const register = db.Register;
 const Op = db.Sequelize.Op;
 const bcrypt = require('bcryptjs');
 
@@ -13,11 +13,18 @@ const registerController = {
     },
 
     createUser: (req, res) => {
-        if (req.body.nombre && req.body.apellido && req.body.email && req.body.fecha && req.body.usuario && req.body.contraseña) {
-            if (req.body.contraseña.length >= 4) {
-                if (req.body.contraseña == req.body.confirContra) {
+        if (
+            req.body.nombre !="" &&
+            req.body.apellido !="" &&
+            req.body.email !="" &&
+            req.body.fecha !="" &&
+            req.body.usuario !="" &&
+            req.body.password !="" 
+            ) {
+            if (req.body.password.length >= 4) {
+                if (req.body.password == req.body.confirContra) {
                     if (req.file) {
-                        let passEncriptada = bcrypt.hashSync(req.body.contraseña);
+                        let passEncriptada = bcrypt.hashSync(req.body.password);
                         db.User.findOne({
                                 where: {
                                     username: req.body.usuario
@@ -30,7 +37,7 @@ const registerController = {
                                         apellido: req.body.apellido,
                                         username: req.body.usuario,
                                         email: req.body.email,
-                                        contraseña: passEncriptada,
+                                        password: passEncriptada,
                                         picture: req.file.filename,
                                         fecha: req.body.fecha,
                                         
@@ -52,7 +59,7 @@ const registerController = {
 
                     } else {
 
-                        let passEncriptada = bcrypt.hashSync(req.body.contraseña);
+                        let passEncriptada = bcrypt.hashSync(req.body.password);
                         db.User.findOne({
                                 where: {
                                     username: req.body.usuario
@@ -99,23 +106,6 @@ const registerController = {
             })
         }
     }
-   /* create: function(req, res){
-            db.Register.create({
-                nombre: req.body.nombre,
-                apellido: req.body.apellido,
-                fecha: req.body.fecha,
-                portada: req.body.portada,
-                usuario: req.body.usuario,
-                contraseña: req.body.contraseña
-            })
-            .then(register => {
-                res.redirect('/')
-            })
-            .catch(err => {
-                console.log(err);
-                res.send(err)
-            })
-    }*/
 }
 
 module.exports = registerController

@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     const Comment = sequelize.define('Comment', {
 
-        comment_id: {
+        id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER

@@ -5,8 +5,14 @@
 <body>
     
     <!-- /Header -->
-    <%- include('./partials/headerDeslogueado') %> 
-	<!-- /Header -->
+            
+    <% if (logueado) { %>
+    <%- include('./partials/headerLogueado')%>
+    <% } else { %>
+    <%- include('./partials/headerDeslogueado')%>
+    <% } %>
+    
+    <!-- /Header -->
 
     <main>
         <div class="uk-section uk-section-small">
@@ -27,7 +33,7 @@
 
                         <div>Nombre de usuario: <input class="form-input" type="text" name="usuario" id="" required placeholder="Ej: Mgalperin21"></div>
                             
-						<div>Contraseña: <input class="form-input" type="password" name="contraseña" id="" required placeholder="*****"></div>
+						<div>Contraseña: <input class="form-input" type="password" name="password" id="" required placeholder="*****"></div>
                             
 						<div>Confirmar contraseña: <input class="form-input" type="password" name="confirContra" id="" required placeholder="*****"></div>
                             

@@ -14,7 +14,7 @@ const controller = {
         }
     },
     login: (req, res) => {
-        if (req.body.usuario && req.body.contraseña) {
+        if (req.body.usuario && req.body.password) {
             db.User.findOne({
                     where: [{
                         username: req.body.usuario
@@ -22,7 +22,7 @@ const controller = {
                 })
                 .then(usuario => {
                     if (usuario) {
-                        if (bcrypt.compareSync(req.body.contraseña, usuario.password)) {
+                        if (bcrypt.compareSync(req.body.password, usuario.password)) {
                             req.session.usuario = usuario
                             if (req.body.remember) {
                                 res.cookie('userId', usuario.id, {

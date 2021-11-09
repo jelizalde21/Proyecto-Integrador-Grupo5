@@ -5,8 +5,14 @@
 <body>
     
     <!-- /Header -->
-    <%- include('./partials/headerDeslogueado') %> 
-	<!-- /Header -->
+		
+    <% if (logueado) { %>
+    <%- include('./partials/headerLogueado')%>
+    <% } else { %>
+    <%- include('./partials/headerDeslogueado')%>
+    <% } %>
+    
+    <!-- /Header -->
 
     <main>
         <div class="uk-section uk-section-xsmall">

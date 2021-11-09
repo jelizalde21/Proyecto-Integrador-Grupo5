@@ -5,8 +5,14 @@
 <body>
     
     <!-- /Header -->
-    <%- include('./partials/headerDeslogueado') %> 
-	<!-- /Header -->
+            
+    <% if (logueado) { %>
+    <%- include('./partials/headerLogueado')%>
+    <% } else { %>
+    <%- include('./partials/headerDeslogueado')%>
+    <% } %>
+    
+    <!-- /Header -->
 
     <main>
         <div class="uk-section uk-section-small">
@@ -21,7 +27,7 @@
                     </div>
                     <div>
                         <label class="form-label" for="">Contraseña:</label>
-					    <input class="form-input" name="contrasena" value="" type="password" placeholder="Ej: *****" required>
+					    <input class="form-input" name="password" value="" type="password" placeholder="Ej: *****" required>
                     </div>
                     <div>
                         <h5>Recordame</h5> 

@@ -5,8 +5,14 @@
 <body>
     
     <!-- /Header -->
-    <%- include('./partials/headerLogueado') %> 
-	<!-- /Header -->
+		
+    <% if (logueado) { %>
+    <%- include('./partials/headerLogueado')%>
+    <% } else { %>
+    <%- include('./partials/headerDeslogueado')%>
+    <% } %>
+    
+    <!-- /Header -->
 
     <main>
         <div class="uk-section uk-section-small">
@@ -27,7 +33,7 @@
                         <label class="form-label" for="">Pie de Foto</label>
 					    <input class="form-input" name="comentario" value="" type="text" placeholder="Ej: Que rico Whiskey!">
                     </div>
-                    <div><input class="input-button" type="submit" value="Enviar"></div>
+                    <div><input class="input-button" type="submit" value="¡Agregar Post!"></div>
                 </form>
 
             </div>

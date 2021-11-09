@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'El mensaje oculto',
   resave: true,
-  saveUninitialized:false,
+  saveUninitialized: false,
 }));
 
 app.use(function (req, res, next) {
