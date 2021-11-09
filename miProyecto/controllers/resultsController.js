@@ -8,8 +8,17 @@ const controller = {
         return res.send(Data.lista);
     },
     show: function (req, res) {
-       
-                    return res.render('results')            
+       db.Post.findAll({
+           where:{
+               caption: {
+                   [ Op.like]: "%"+req.query.search+"%"
+               }
+           },
+           limit: 10 
+       })
+       .then(posts => {
+        return res.render('results', {posts: posts})  
+       })         
             
 
         }
