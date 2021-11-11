@@ -5,12 +5,24 @@ const data = require('../data/usuarios');
 const posts = require('../data/posteos');
 
 const indexController = {
-    index: function (req, res) {
-        res.render ('index', {users: data.lista, listaPosts: posts.lista})
-    },
-    /*show: function (req, res) {
-       res.render ('index', {posts: posts.lista})
-    },*/
+    
+    index: (req, res) => { 
+        db.Post.findAll({
+            include: [{
+                association: 'usuarios'
+            }, {
+                association: 'comentarios'
+            }],
+            
+
+            }).then(postsViejos => {
+                res.render('index', {
+                    postsViejos: postsViejos
+                });
+            })
+        
+
+    }
 }
 
 module.exports = indexController

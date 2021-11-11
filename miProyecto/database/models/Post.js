@@ -15,6 +15,9 @@ module.exports = (sequelize, dataTypes) => {
         fecha: {
             type: dataTypes.DATE
         },
+        user_post_id: {
+            type: dataTypes.INTEGER
+        }
    },
         
         {
@@ -22,13 +25,17 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
         });
 
-    Post.associate = function(models){
-        Post.belongsTo(models.User, {
-            as: "posteos",
+    
+    Post.associate = (models) => {
+        Post.belongsTo(models.User, { //Post pertenece a User
+            as: "usuarios",
             foreignKey: "user_post_id"
-        })
-    }    
-        
+        });
+        Post.hasMany(models.Comment, { //Post tiene muchos Comment
+            as: "comentarios",
+            foreignKey: "id"
+        }); 
+    }  
     return Post
     
 }
