@@ -8,7 +8,7 @@ nombre VARCHAR(100) NOT NULL,
 apellido VARCHAR(100) NOT NULL,
 username VARCHAR (100) unique NOT NULL,
 email VARCHAR (150) unique NOT NULL,
-contrasena VARCHAR (150) NOT NULL,
+password VARCHAR (150) NOT NULL,
 picture VARCHAR (150),
 fecha DATE NOT NULL,
 nro_posts INT,
@@ -36,14 +36,14 @@ FOREIGN KEY (comment_post_id) REFERENCES posts (id),
 FOREIGN KEY (comment_user_id) REFERENCES users (id)
 );
 
-INSERT INTO users VALUES (DEFAULT , 'Horacio Barbeito', 'Horacio','Barbeito','hbarbeito@udesa.edu.ar', 'myBooze', '','2002-01-09', 100);
-INSERT INTO users VALUES (DEFAULT , 'Javier Elizalde','Javier','Elizalde', 'jelizalde@udesa.edu.ar', 'myBooze', '','2001-08-21', 80);
-INSERT INTO users VALUES (DEFAULT , 'Eugenia García Borghes', 'Eugenia','García Borghes','egborghes@udesa.edu.ar', 'myBooze', '','2001-11-09', 80);
-INSERT INTO users VALUES (DEFAULT , 'Brian Gomez', 'Brian','Gomez','bgomez@udesa.edu.ar', 'myBooze', '','1995-03-08', 70);
-INSERT INTO users VALUES (DEFAULT, 'Agustín Pittari', 'Agustín','Pittari','apittari@udesa.edu.ar', 'myBooze', '', '1998-06-03', 50);
-INSERT INTO users VALUES (DEFAULT, 'Santiago Matheu', 'Santiago', 'Matheu', 'smatheu@udesa.edu.ar', 'myBooze', '', '2001-11-11', 60);
-INSERT INTO users VALUES (DEFAULT, 'Tomás Poitevin', 'Tomás', 'Poitevin', 'tgarcíapoitevin@udesa.edu.ar', 'myBooze', '','2001-03-21', 40);
-INSERT INTO users VALUES (DEFAULT, 'Alejandro Vivone', 'Alejandro', 'Vivone', 'avivone@udesa.edu.ar', 'myBooze', '','1981-08-31', 20);
+INSERT INTO users VALUES (DEFAULT , 'Horacio Barbeito', 'Horacio','Barbeito','hbarbeito@udesa.edu.ar', 'myBooze', 'foto1.jpg','2002-01-09', 100);
+INSERT INTO users VALUES (DEFAULT , 'Javier Elizalde','Javier','Elizalde', 'jelizalde@udesa.edu.ar', 'myBooze', 'foto2.jpg','2001-08-21', 80);
+INSERT INTO users VALUES (DEFAULT , 'Eugenia García Borghes', 'Eugenia','García Borghes','egborghes@udesa.edu.ar', 'myBooze', 'foto3.jpg','2001-11-09', 80);
+INSERT INTO users VALUES (DEFAULT , 'Brian Gomez', 'Brian','Gomez','bgomez@udesa.edu.ar', 'myBooze', 'foto4.jpg','1995-03-08', 70);
+INSERT INTO users VALUES (DEFAULT, 'Agustín Pittari', 'Agustín','Pittari','apittari@udesa.edu.ar', 'myBooze', 'foto5.jpg', '1998-06-03', 50);
+INSERT INTO users VALUES (DEFAULT, 'Santiago Matheu', 'Santiago', 'Matheu', 'smatheu@udesa.edu.ar', 'myBooze', 'foto6.jpg', '2001-11-11', 60);
+INSERT INTO users VALUES (DEFAULT, 'Tomás Poitevin', 'Tomás', 'Poitevin', 'tgarcíapoitevin@udesa.edu.ar', 'myBooze', 'foto7.jpg','2001-03-21', 40);
+INSERT INTO users VALUES (DEFAULT, 'Alejandro Vivone', 'Alejandro', 'Vivone', 'avivone@udesa.edu.ar', 'myBooze', 'foto8.jpg','1981-08-31', 20);
 
 INSERT INTO posts VALUES (DEFAULT , '' , 'Alex, como el león' , '2021-09-26', 1);
 INSERT INTO posts VALUES (DEFAULT , '' , 'Suave como las mujeres!' , '2021-09-27', 2);
