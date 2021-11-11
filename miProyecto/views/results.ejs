@@ -24,9 +24,9 @@
 	                        <% for( let i = 0; i < posts.length; i++ ) { %>
 	                        <div
 	                            class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-	                            <a href="detail/post" class="link-detalle">
+	                            <a href="detail/post/id" class="link-detalle">
 	                                <img src="/images/<%= posts[i].picture %>" alt="foto de perfil" class="foto-perfil">
-	                                <p class="uk-text-center">Lorem ipsum</p>
+	                                <h4 class="uk-text-center"><%= posts[i].caption %></h4>
 	                            </a>
 	                        </div>
 	                        <% } %>
