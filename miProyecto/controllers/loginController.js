@@ -51,5 +51,11 @@ const controller = {
 
         ;
     },
+
+    logout: function(req, res){
+        req.session.destroy()
+        req.clearCookie("userId")
+        res.redirect("/users/login")
+    }
 }
 module.exports = controller;
