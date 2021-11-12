@@ -8,6 +8,7 @@ article.post div.info-usuario{
     padding: 10px;
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
+    justify-content: space-between;
 }
 article.post div.info-usuario img{
     border-radius: 50px;
