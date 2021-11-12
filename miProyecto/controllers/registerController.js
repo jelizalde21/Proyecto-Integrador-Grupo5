@@ -19,12 +19,12 @@ const registerController = {
             req.body.email !="" &&
             req.body.fecha !="" &&
             req.body.usuario !="" &&
-            req.body.password !="" 
+            req.body.passwords !="" 
             ) {
-            if (req.body.password.length >= 4) {
-                if (req.body.password == req.body.confirContra) {
+            if (req.body.passwords.length >= 4) {
+                if (req.body.passwords == req.body.confirContra) {
                     if (req.file) {
-                        let passEncriptada = bcrypt.hashSync(req.body.password);
+                        let passEncriptada = bcrypt.hashSync(req.body.passwords);
                         db.User.findOne({
                                 where: {
                                     username: req.body.usuario
@@ -37,7 +37,7 @@ const registerController = {
                                         apellido: req.body.apellido,
                                         username: req.body.usuario,
                                         email: req.body.email,
-                                        password: passEncriptada,
+                                        passwords: passEncriptada,
                                         picture: req.file.filename,
                                         fecha: req.body.fecha,
                                         
@@ -59,7 +59,7 @@ const registerController = {
 
                     } else {
 
-                        let passEncriptada = bcrypt.hashSync(req.body.password);
+                        let passEncriptada = bcrypt.hashSync(req.body.passwords);
                         db.User.findOne({
                                 where: {
                                     username: req.body.usuario
@@ -74,7 +74,7 @@ const registerController = {
                                         nacimiento: req.body.fecha,
                                         username: req.body.usuario,
                                         cover: 'fotodefault.jpeg',
-                                        password: passEncriptada,
+                                        passwords: passEncriptada,
                                     }).then(user => {
                                         req.session.usuario = user
                                         res.cookie('userId', user.id, {
