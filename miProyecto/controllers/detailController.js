@@ -1,16 +1,27 @@
 const db = require('../database/models'); //relaciona controlador con modelos
 const Op = db.Sequelize.Op;
 
-const data = require('../data/usuarios')
-const posts = require('../data/posteos')
-
 const detailController = {
-    user: function (req, res) {
-        res.render ('detailUser', {users: data.lista, listaPosts: posts.lista})
+    index: (req, res) => { 
+        db.User.findAll({
+            include: [{
+                association: 'posteosU'
+            }, {
+                association: 'comentariosU'
+            }],
+            
+
+            }).then(users => {
+                res.render('detailUser', {
+                    users: users
+                });
+            })
     },
+    
+    
     add: function (req, res) {
         if (req.session.usuario) {
-            res.render('detailAdd')
+            res.render('detail/add')
         } else {
             return res.redirect('/')
         }
@@ -27,7 +38,7 @@ const detailController = {
                     res.redirect("/detail/id/" + posteo.id) //si está todo ok, nos manda al producto creado  
                 })
         } else {
-            res.render('detailAdd', { //si no está todo ok, nos muestra la misma vista con los campos vacíos para que los llenemos
+            res.render('detail/add', { //si no está todo ok, nos muestra la misma vista con los campos vacíos para que los llenemos
                 error: 'No se pueden dejar campos vacíos'
             })
         }
@@ -36,7 +47,7 @@ const detailController = {
         let idPost = req.params.id;
         let postEncontrado = posts.findById(idPost);
 
-       res.render ('detailPost', {listaPost: postEncontrado})
+       res.render ('detail/post', {listaPost: postEncontrado})
        /*res.send(postEncontrado);*/
     },
     posteos: function(req, res){

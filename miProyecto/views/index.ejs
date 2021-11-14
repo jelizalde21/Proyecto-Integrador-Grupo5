@@ -25,7 +25,7 @@
                                 <div>
                                     <img src="/images/<%= postsViejos[i].usuarios.picture %>" alt="" width="35%">
                                 </div>
-                                <h4><a href="/detail/user"> <%= postsViejos[i].usuarios.username %> </a></h4>
+                                <h4><a href="/detail/user/id/<%= postsViejos[i].id %>"> <%= postsViejos[i].usuarios.username %> </a></h4>
                                 
                             </div>
                             <div class="post-body uk-flex uk-flex-center">
@@ -41,7 +41,7 @@
                                     </li>
                                 </ul>
                                 <div class="post-pie uk-flex">
-                                    <h5 class="uk-width-1-6"><a href="/detail/user"> <%= postsViejos[i].usuarios.usuario %> </a></h5>
+                                    <h5 class="uk-width-1-6"><a href="/detail/user/id/<%= postsViejos[i].id %>"> <%= postsViejos[i].usuarios.username %> </a></h5>
                                     <p class="uk-width-5-6">Pie de post</p>
                                 </div>
                             </div>
@@ -49,11 +49,11 @@
                                 <h6>Comentarios:</h6>
                                 <ul>
                                     <li>
-                                        <a href="/detail/user"> <%= postsViejos[i].usuarios.usuario %> </a>
+                                        <a href="/detail/user/id/<%= postsViejos[i].id %>"> <%= postsViejos[i].usuarios.username %> </a>
                                         <p><%= postsViejos[i].comentarios.comentario %></p>
                                     </li>
                                     <li>
-                                        <a href="/detail/user"> <%= postsViejos[i].usuarios.usuario %> </a>
+                                        <a href="/detail/user/id/<%= postsViejos[i].id %>"> <%= postsViejos[i].usuarios.username %> </a>
                                         <p>Comentario 2</p>
                                     </li>
                                     <a href="/detail/post/id/<%= postsViejos[i].usuarios.id %>">Ver más...</a>
