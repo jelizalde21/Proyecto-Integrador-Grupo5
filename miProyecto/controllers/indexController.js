@@ -6,13 +6,12 @@ const indexController = {
     index: (req, res) => { 
         db.Post.findAll({
             include: [{
-                association: 'usuarios'
-            }, {
-                association: 'comentarios'
+                all:true,
+                nested: true
             }],
-            
 
             }).then(postsViejos => {
+            
                 res.render('index', {
                     postsViejos: postsViejos
                 });

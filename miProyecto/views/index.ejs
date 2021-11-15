@@ -48,15 +48,13 @@
                             <div class="post-comentarios">
                                 <h6>Comentarios:</h6>
                                 <ul>
+                                    <% for( let j = 0; j < postsViejos[i].comentarios.length; j++ ) { %>
                                     <li>
-                                        <a href="/detail/user/id/<%= postsViejos[i].id %>"> <%= postsViejos[i].usuarios.username %> </a>
-                                        <p><%= postsViejos[i].comentarios.comentario %></p>
-                                    </li>
-                                    <li>
-                                        <a href="/detail/user/id/<%= postsViejos[i].id %>"> <%= postsViejos[i].usuarios.username %> </a>
-                                        <p>Comentario 2</p>
+                                        <a href="/detail/user/id/<%= postsViejos[i].id %>"> <%= postsViejos[i].comentarios[j].comentarios1.username %> </a>
+                                        <p><%= postsViejos[i].comentarios[j].comentario %></p>
                                     </li>
                                     <a href="/detail/post/id/<%= postsViejos[i].usuarios.id %>">Ver más...</a>
+                                    <% } %>
                                 </ul>
                             </div>
                         </article>
