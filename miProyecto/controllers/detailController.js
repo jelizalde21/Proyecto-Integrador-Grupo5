@@ -45,7 +45,7 @@ const detailController = {
     },
     post: function (req, res) {
         let idPost = req.params.id;
-        let postEncontrado = posts.findById(idPost);
+        let postEncontrado = Post.findById(idPost);
 
        res.render ('detail/post', {listaPost: postEncontrado})
        /*res.send(postEncontrado);*/
