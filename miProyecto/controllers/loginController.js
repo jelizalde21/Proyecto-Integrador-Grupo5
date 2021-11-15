@@ -55,7 +55,6 @@ const controller = {
     logout: function(req, res){
         req.session.destroy()
         res.clearCookie("userId")
-        // esta ruta ??
         res.redirect("/login")
     }
 }
