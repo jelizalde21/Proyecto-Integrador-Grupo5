@@ -54,8 +54,9 @@ const controller = {
 
     logout: function(req, res){
         req.session.destroy()
-        req.clearCookie("userId")
-        res.redirect("/users/login")
+        res.clearCookie("userId")
+        // esta ruta ??
+        res.redirect("/login")
     }
 }
 module.exports = controller;
