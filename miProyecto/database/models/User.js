@@ -41,12 +41,12 @@ module.exports = (sequelize, dataTypes) => {
 
         User.hasMany(models.Post, {
             as: "posteosU",
-            foreignKey: "id"
+            foreignKey: "user_post_id"
         });
 
         User.hasMany(models.Comment, {
             as: "comentariosU",
-            foreignKey: "id"
+            foreignKey: "comment_user_id"
         });
 
     }
