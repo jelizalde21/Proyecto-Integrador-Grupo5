@@ -3,7 +3,7 @@ const Op = db.Sequelize.Op;
 
 const detailController = {
     index: (req, res) => { 
-        db.User.findAll({
+        db.User.findByPk(req.params.id,{
             include: [{
                 association: 'posteosU'
             }, {
@@ -11,9 +11,9 @@ const detailController = {
             }],
             
 
-            }).then(users => {
+            }).then(user => {
                 res.render('detailUser', {
-                    users: users
+                    user: user
                 });
             })
     },
