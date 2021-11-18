@@ -18,7 +18,6 @@ const detailController = {
             })
     },
     
-    
     add: function (req, res) {
         if (req.session.usuario) {
             res.render('detail/add')
@@ -43,12 +42,20 @@ const detailController = {
             })
         }
     },
-    post: function (req, res) {
-        let idPost = req.params.id;
-        let postEncontrado = Post.findById(idPost);
 
-       res.render ('detail/post', {listaPost: postEncontrado})
-       /*res.send(postEncontrado);*/
+    post: (req, res) => { 
+        db.Post.findAll({
+            include: [{
+                association: 'usuarios'
+            }, {
+                association: 'comentarios'
+            }],
+            
+            }).then(posts => {
+                res.render('detailPost', {
+                    posts: posts
+                });
+            })
     },
     posteos: function(req, res){
         db.User.findAll({
