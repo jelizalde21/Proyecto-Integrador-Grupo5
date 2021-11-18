@@ -68,13 +68,13 @@ const registerController = {
                             .then(resultado => {
                                 if (!resultado) {
                                     db.User.create({
-                                        name: req.body.nombre,
-                                        last_name: req.body.apellido,
-                                        email: req.body.email,
-                                        nacimiento: req.body.fecha,
+                                        nombre: req.body.nombre,
+                                        apellido: req.body.apellido,
                                         username: req.body.usuario,
-                                        cover: 'fotodefault.jpeg',
+                                        email: req.body.email,
                                         passwords: passEncriptada,
+                                        picture: 'fotodefault.jpeg',
+                                        fecha: req.body.fecha
                                     }).then(user => {
                                         req.session.usuario = user
                                         res.cookie('userId', user.id, {
