@@ -44,20 +44,18 @@ const detailController = {
     },
 
     post: (req, res) => { 
-        db.Post.findAll({
+        db.Post.findByPk(req.params.id,{
             include: [{
-                association: 'usuarios'
-            }, {
-                association: 'comentarios'
-            }],
+                all:true,
+                nested: true}],
             
-            }).then(posts => {
+            }).then(post => {
                 res.render('detailPost', {
-                    posts: posts
+                    post: post
                 });
             })
-    },
-    posteos: function(req, res){
+    }
+   /* posteos: function(req, res){
         db.User.findAll({
             include: [{association: "posteos"}]
         })
@@ -72,7 +70,7 @@ const detailController = {
         .then(comentarioss =>{
             res.send(comentarioss)
         })
-    }
+    }*/
 }
 
 module.exports = detailController
