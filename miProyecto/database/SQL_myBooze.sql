@@ -53,7 +53,7 @@ INSERT INTO posts VALUES (DEFAULT , 'foto5.jpg' , 'Excelente para un asado' , '2
 INSERT INTO posts VALUES (DEFAULT , 'foto6.jpg' , 'Un buen whiskey para disfrutar en compañía' , '2021-09-27', 2);
 INSERT INTO posts VALUES (DEFAULT , 'foto7.jpg' , 'Black Label, no, es el nuevo Gold!' , '2021-09-24', 3);
 INSERT INTO posts VALUES (DEFAULT , 'foto8.jpg' , 'Color dorado como el oro' , '2021-09-25', 4);
-INSERT INTO posts VALUES (DEFAULT , 'foto9.jpg' , 'Rústico como ella sola' , '2021-09-25', 5);
+INSERT INTO posts VALUES (DEFAULT , 'foto9.jpg' , 'Rústico como ella sola' , '2021-09-25', 11);
 INSERT INTO posts VALUES (DEFAULT , 'foto10.jpg' , 'Un clásico eterno' , '2021-09-22', 10);
 
 INSERT INTO comments VALUES (DEFAULT, 'BUENARDO', '2021-09-27', 1, 2);
