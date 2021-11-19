@@ -50,11 +50,11 @@ INSERT INTO posts VALUES (DEFAULT , 'foto2.jpg' , 'Suave como las mujeres!' , '2
 INSERT INTO posts VALUES (DEFAULT , 'foto3.jpg' , 'Reluciente packaging' , '2021-09-22', 3);
 INSERT INTO posts VALUES (DEFAULT , 'foto4.jpg' , 'Caro pero, riguroso' , '2021-09-21', 4);
 INSERT INTO posts VALUES (DEFAULT , 'foto5.jpg' , 'Excelente para un asado' , '2021-09-23', 5);
-INSERT INTO posts VALUES (DEFAULT , 'foto6.jpg' , 'Un buen whiskey para disfrutar en compañía' , '2021-09-27', 2);
-INSERT INTO posts VALUES (DEFAULT , 'foto7.jpg' , 'Black Label, no, es el nuevo Gold!' , '2021-09-24', 3);
-INSERT INTO posts VALUES (DEFAULT , 'foto8.jpg' , 'Color dorado como el oro' , '2021-09-25', 4);
-INSERT INTO posts VALUES (DEFAULT , 'foto9.jpg' , 'Rústico como ella sola' , '2021-09-25', 11);
-INSERT INTO posts VALUES (DEFAULT , 'foto10.jpg' , 'Un clásico eterno' , '2021-09-22', 10);
+INSERT INTO posts VALUES (DEFAULT , 'foto6.jpg' , 'Un buen whiskey para disfrutar en compañía' , '2021-09-27', 6);
+INSERT INTO posts VALUES (DEFAULT , 'foto7.jpg' , 'Black Label, no, es el nuevo Gold!' , '2021-09-24', 7);
+INSERT INTO posts VALUES (DEFAULT , 'foto8.jpg' , 'Color dorado como el oro' , '2021-09-25', 8);
+INSERT INTO posts VALUES (DEFAULT , 'foto9.jpg' , 'Rústico como ella sola' , '2021-09-25', 2);
+INSERT INTO posts VALUES (DEFAULT , 'foto10.jpg' , 'Un clásico eterno' , '2021-09-22', 1);
 
 INSERT INTO comments VALUES (DEFAULT, 'BUENARDO', '2021-09-27', 1, 2);
 INSERT INTO comments VALUES (DEFAULT, 'Excelente calidad', '2021-09-27', 1, 4);
