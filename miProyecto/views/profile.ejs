@@ -42,7 +42,7 @@
                         
                         <% for( let i = 0; i < users.posteosU.length; i++ ) { %>
                         <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-                            <a href="detail/post/id/<%= users.id %>" class="link-detalle">
+                            <a href="detail/post/id/<%= users.posteosU[i].id %>" class="link-detalle">
                                 <img src="/images/<%= users.posteosU[i].picture %> " alt="foto de perfil" class="foto-perfil">
                                 <p class="uk-text-center"> <%= users.posteosU[i].caption %> </p>
                             </a>
