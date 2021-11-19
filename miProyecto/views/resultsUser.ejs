@@ -21,14 +21,13 @@
 	                <h2><%=resultado %></h2>
 	                <section class="muro uk-flex uk-flex-middle uk-flex-center">
 	                    <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
-	                        <% for( let i = 0; i < posts.length; i++ ) { %>
+	                        <% for( let i = 0; i < users.length; i++ ) { %>
 	                        <div
 								class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
-								<a href="/detail/user/id/<%= posts[i].usuarios.id%>"><%= posts[i].usuarios.nombre%></a>
-	                            <a href="/detail/post/id/<%=posts[i].id %>" class="link-detalle">
-	                                <img src="/images/<%= posts[i].picture %>" alt="foto de perfil" class="foto-perfil">
-	                                <h4 class="uk-text-center"><%= posts[i].caption %></h4>
-	                            </a>
+								<a href="/detail/user/id/<%= users[i].id%>"><%= users[i].nombre%></a>
+	                            
+	                                <img src="/images/<%= users[i].picture %>" alt="foto de perfil" class="foto-perfil">
+	                                
 	                        </div>
 	                        <% } %>
 	                    </div>

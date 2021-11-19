@@ -19,7 +19,7 @@
             <div class="uk-container uk-container-small">
                 <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
                     <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-                        <img src="/images/<%= user.picture %> " alt="foto de perfil" class="foto-perfil">
+                        <img src="/images/<%= user.picture%>" alt="foto de perfil" class="foto-perfil">
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
@@ -28,13 +28,18 @@
                         </div>
                         <div>
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                                <li>100 posts</li>
+                                <li><%=user.posteosU.length%> posts</li>
                                 <li>200 seguidores</li>
                                 <li>300 seguidos</li>
                             </ul>
                         </div>
                     </div>
                </section>
+               <form action="/results/searchUser" class="uk-search uk-search-default">
+                <span uk-search-icon></span>
+                <input type="search" class="uk-search-input" placeholder="Buscar..." name="search">
+                <!-- <a href="../results" ></a> --> 
+            </form>
                <section class="muro uk-flex uk-flex-middle uk-flex-center">
                     <div class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove" uk-grid>
                         <% for( let i = 0; i < user.posteosU.length; i++ ) { %>
