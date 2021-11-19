@@ -13,7 +13,10 @@ const controller = {
                    [ Op.like]: "%"+req.query.search+"%"
                }
            },
-           limit: 10 
+           limit: 10,
+           order: [
+               ['fecha', 'DESC'],
+           ]
        })
        .then(posts => {
         return res.render('results', {posts: posts})  
