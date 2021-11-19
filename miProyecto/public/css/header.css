@@ -57,6 +57,7 @@ header nav form input, header nav form ::placeholder, header nav form span{
     color: black;
     text-decoration: none;
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
 }
 .uk-background-primary {
     background-color: #611707;
@@ -67,4 +68,12 @@ header nav form input, header nav form ::placeholder, header nav form span{
     color: #fff;
     border: 1px solid transparent
 
+}
+
+.boton-logout{
+    background-color: inherit;
+    color: white;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
 }
