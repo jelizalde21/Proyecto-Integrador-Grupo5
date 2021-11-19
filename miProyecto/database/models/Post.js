@@ -17,12 +17,20 @@ module.exports = (sequelize, dataTypes) => {
         },
         user_post_id: {
             type: dataTypes.INTEGER
+        },
+        createdAt: {
+            type: dataTypes.DATE,
+            field: "created_at"
+        },
+        updatedAt: {
+            type: dataTypes.DATE,
+            field: "updated_at"
         }
    },
         
         {
         tableName: "posts",
-        timestamps: false
+        timestamps: true
         });
 
     

@@ -17,12 +17,20 @@ module.exports = (sequelize, dataTypes) => {
         },
         comment_post_id: {
             type: dataTypes.INTEGER
+        }, 
+        createdAt: {
+            type: dataTypes.DATE,
+            field: "created_at"
+        },
+        updatedAt: {
+            type: dataTypes.DATE,
+            field: "updated_at"
         }
     },
         
     {
     tableName: "comments",
-    timestamps: false,
+    timestamps: true,
     });
 
     Comment.associate = function(models){

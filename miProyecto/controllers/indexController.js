@@ -9,6 +9,9 @@ const indexController = {
                 all:true,
                 nested: true
             }],
+            order: [
+                ['usuarios', 'created_at', 'desc'] //order indicando la relación, el campo y el criterio de ordenamiento.
+            ],
 
             }).then(postsViejos => {
             
