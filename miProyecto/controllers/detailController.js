@@ -42,6 +42,17 @@ const detailController = {
             })
         }
     },
+    delete: function(req, res){
+        let id = req.params.id
+        db.Post.destroy({
+            where: {
+                id: id
+            }
+        })
+        .then(posts => {
+            res.redirect('/')
+        })
+    },
 
     post: (req, res) => { 
         db.Post.findByPk(req.params.id,{
