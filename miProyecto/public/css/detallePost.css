@@ -3,6 +3,9 @@ section.detalle-container{
 }
 article.detalle-post{
     /* border-right: 1px solid lightgray; */
+    display: grid;
+    grid-template-rows: 2fr;
+    text-align: center;
 }
 
 article.detalle-post .imagen-post{

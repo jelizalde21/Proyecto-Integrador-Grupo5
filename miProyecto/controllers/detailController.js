@@ -27,13 +27,14 @@ const detailController = {
     },
     create: (req, res) => { 
         if (req.session.usuario) { //chequea que haya un usuario logueado
-            db.Post.create({ //un producto con los siguientes datos
-                    picture: req.file.filename, //datos en el input
+            db.Post.create({ //un post con los siguientes datos
+                    picture: req.file.filename, //datos en input
                     caption: req.body.caption,
-                    users_id: req.session.usuario.id //si está logueado, en users_id, va a poner el id del usuario logueado
+                    user_post_id: req.session.usuario.id //si está logueado, en user_post_id, va a poner el id del usuario logueado
                 })
                 .then(posteo => {
-                    res.redirect("/detail/id/" + posteo.id) //si está todo ok, nos manda al producto creado  
+                    /*res.send(posteo)*/
+                    res.redirect("/detail/post/id/" + posteo.id) //si está todo ok, nos manda al posteo creado  
                 })
         } else {
             res.render('detailAdd', { //si no está todo ok, nos muestra la misma vista con los campos vacíos para que los llenemos

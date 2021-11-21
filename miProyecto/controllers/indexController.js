@@ -14,7 +14,7 @@ const indexController = {
             ],
 
             }).then(postsViejos => {
-            
+                /*res.send(postsViejos)*/
                 res.render('index', {
                     postsViejos: postsViejos
                 });
