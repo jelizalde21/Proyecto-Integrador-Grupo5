@@ -25,13 +25,6 @@ const detailController = {
             return res.redirect('/')
         }
     },
-    edit: function (req, res) {
-        if (req.session.usuario) {
-            res.render('detailEdit')
-        } else {
-            return res.redirect('/')
-        }
-    },
     create: (req, res) => { 
         if (req.session.usuario) { //chequea que haya un usuario logueado
             db.Post.create({ //un post con los siguientes datos
@@ -43,12 +36,36 @@ const detailController = {
                     /*res.send(posteo)*/
                     res.redirect("/detail/post/id/" + posteo.id) //si está todo ok, nos manda al posteo creado  
                 })
+                .catch(err => {
+                    console.log(err)
+                    res.send(err)
+                })
         } else {
             res.render('detailAdd', { //si no está todo ok, nos muestra la misma vista con los campos vacíos para que los llenemos
                 error: 'No se pueden dejar campos vacíos'
             })
         }
     },
+    edit: function (req, res) {
+        if (req.session.usuario) {
+            db.Post.findByPk(req.params.id)
+            .then(posts => {
+                res.render('detailEdit', {posts: posts})
+            })
+        } else {
+            return res.redirect('/')
+        }
+    },
+    /*edit: function (req, res) {
+        if (req.session.usuario != undefined) {
+            db.Post.findByPk(req.params.id,)
+            .then(posts => {
+                return res.render('detailEdit', {posts: posts})
+            })
+        } else {
+            return res.redirect('/login')
+        }
+    },*/
     update: function(req, res) {
         let id = req.params.id
         db.Post.update({ 
@@ -62,11 +79,14 @@ const detailController = {
             }
         })
         .then(posteo => {
-            /*res.send(posteo)*/
-            res.redirect("/detail/post/id/" + posteo.id)  
+            res.send(posteo)
+            /*res.redirect("/detail/post/id/" + posteo.id)  */
+        })
+        .catch(err => {
+            console.log(err)
+            res.send(err)
         })
     },
-
     delete: function(req, res){
         let id = req.params.id
         db.Post.destroy({
@@ -76,6 +96,10 @@ const detailController = {
         })
         .then(posts => {
             res.redirect('/')
+        })
+        .catch(err => {
+            console.log(err)
+            res.send(err)
         })
     },
 

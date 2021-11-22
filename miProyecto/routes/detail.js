@@ -17,7 +17,7 @@ let upload = multer({ storage: storage })
 /* GET home page. */
 router.get('/user/id/:id', detailController.index);
 router.get('/add', detailController.add);
-router.get('/edit', detailController.edit);
+router.get('/edit/:id', detailController.edit);
 router.get('/post/id/:id', detailController.post);
 
 router.post('/add', upload.single("picture"), detailController.create);
