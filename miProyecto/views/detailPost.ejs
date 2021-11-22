@@ -20,21 +20,19 @@
                 <section class="uk-flex uk-width-2-3 detalle-container">
                     
                     <article class="uk-width-2-3 uk-flex uk-flex-center uk-flex-middle detalle-post">
-                         <!-- <% if (logueado && miUsuario.id==post.user_post_id) { %>
-                            <p class="post-detail-description">
-                                <a class="editarPost" href="/detail/edit/<%= post.id %> ">Editar Post</a>
-                            </p>
-                            <form action="/detail/delete/<%= post.id %>" method="POST">
-                                <input type="hidden" name="user_post_id" value="<%= post.users_id %> ">
-                                <button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash"
-                                        style="color: #B99871;"></i></button>
-                            </form>
-                            <% } %> -->
+                         
                         <img src="/images/<%=post.picture %> " alt="Imagen del post" class="imagen-post ">
                         <h3 class="uk-width-5-6"><%= post.caption %></h3>
-                        <form action="/detail/delete/<%= post.id %>" method="POST">
-                            <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Eliminar Post</button>
-                        </form>
+                        <div class="uk-width-2-1 uk-flex uk-flex-column">
+                            <% if (logueado && miUsuario.id==post.user_post_id) { %>
+                            <form action="/detail/delete/<%= post.id %>" method="POST">
+                                <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Eliminar Post</button>
+                            </form>
+                            <form action="/detail/edit" method="get">
+                                <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Modificar Post</button>
+                            </form>
+                            <% } %>
+                        </div>
                     </article>
 
                     <article class="uk-width-1-3 uk-flex uk-flex-column comentarios-detalle">

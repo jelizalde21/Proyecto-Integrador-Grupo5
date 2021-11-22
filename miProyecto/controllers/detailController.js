@@ -25,6 +25,13 @@ const detailController = {
             return res.redirect('/')
         }
     },
+    edit: function (req, res) {
+        if (req.session.usuario) {
+            res.render('detailEdit')
+        } else {
+            return res.redirect('/')
+        }
+    },
     create: (req, res) => { 
         if (req.session.usuario) { //chequea que haya un usuario logueado
             db.Post.create({ //un post con los siguientes datos
@@ -42,6 +49,24 @@ const detailController = {
             })
         }
     },
+    update: function(req, res) {
+        let id = req.params.id
+        db.Post.update({ 
+            picture: req.file.filename, 
+            caption: req.body.caption,
+            user_post_id: req.session.usuario.id
+        },
+        {
+            where: {
+                id: id
+            }
+        })
+        .then(posteo => {
+            /*res.send(posteo)*/
+            res.redirect("/detail/post/id/" + posteo.id)  
+        })
+    },
+
     delete: function(req, res){
         let id = req.params.id
         db.Post.destroy({
@@ -66,22 +91,7 @@ const detailController = {
                 });
             })
     }
-   /* posteos: function(req, res){
-        db.User.findAll({
-            include: [{association: "posteos"}]
-        })
-        .then(posteoss =>{
-            res.send(posteoss)
-        })
-    },
-    comentarios: function(req, res){
-        db.User.findAll({
-            include: [{association: "comentarios"}]
-        })
-        .then(comentarioss =>{
-            res.send(comentarioss)
-        })
-    }*/
+
 }
 
 module.exports = detailController
