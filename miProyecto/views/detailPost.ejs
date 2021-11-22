@@ -28,7 +28,7 @@
                             <form action="/detail/delete/<%= post.id %>" method="POST">
                                 <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Eliminar Post</button>
                             </form>
-                            <form action="/detail/edit" method="get">
+                            <form action="/detail/edit/<%=post.id %>">
                                 <button class="uk-button uk-button-primary uk-margin-small-top" type="submit">Modificar Post</button>
                             </form>
                             <% } %>
