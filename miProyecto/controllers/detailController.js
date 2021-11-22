@@ -90,7 +90,17 @@ const detailController = {
                     post: post
                 });
             })
-    }
+    },
+    // metodo para agregar comentarios
+    comentarios: (req,res) => {
+        if (req.session.usuario) { // si esta logueado 
+            res.render('detailPost')
+        } else {
+            return res.redirect('/login') // si no esta logueado mandar a login
+        }
+    },
+
+
 
 }
 

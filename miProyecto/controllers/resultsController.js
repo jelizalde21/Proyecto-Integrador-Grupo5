@@ -1,11 +1,11 @@
 const db = require('../database/models'); //relaciona controlador con modelos
 const Op = db.Sequelize.Op;
 
-
 const controller = {
     index: function (req, res) {
         return res.send(Data.lista);
     },
+    // buscador de posteos
     show: function (req, res) {
         db.Post.findAll({
                 where: {
@@ -34,12 +34,9 @@ const controller = {
                         resultado: 'No existen resultados para ese criterio de busqueda'
                     })
                 }
-
             })
-
-
     },
-
+    //buscador de usuarios
     showUser: function (req, res) {
         db.User.findAll({
                 where: {
