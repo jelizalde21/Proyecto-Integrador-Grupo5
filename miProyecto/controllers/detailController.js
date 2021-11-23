@@ -68,10 +68,12 @@ const detailController = {
     },*/
     update: function(req, res) {
         let id = req.params.id
+        let fecha = new Date()
         db.Post.update({ 
             picture: req.file.filename, 
             caption: req.body.caption,
-            user_post_id: req.session.usuario.id
+            user_post_id: req.session.usuario.id,
+            updated_at: fecha
         },
         {
             where: {
@@ -79,8 +81,8 @@ const detailController = {
             }
         })
         .then(posteo => {
-            res.send(posteo)
-            /*res.redirect("/detail/post/id/" + posteo.id)  */
+            /*res.send(posteo)*/
+            res.redirect("/detail/post/id/" + posteo.id) 
         })
         .catch(err => {
             console.log(err)
