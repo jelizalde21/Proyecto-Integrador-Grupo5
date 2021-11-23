@@ -17,13 +17,13 @@
     <main>
         <div class="uk-section uk-section-small">
             <div class="uk-container uk-container-large uk-flex uk-flex-middle uk-flex-center">
-                <form action="/profile/edit" class="formulario" method="post">
+                <form action="/profile/edit/<%= user.id %>" class="formulario" method="post" enctype="multipart/form-data">
                     
                     <h2>Editar Perfil</h2>
 
                     <div> Nombre: <input class="form-input" type="text" name="nombre" id="" required placeholder="Ej: Marcos"> </div>
 
-                    <div> Apellido: <input class="form-input" type="text" name="apellido" id="" required placeholder="Ej: Galperín"> </div>
+                     <div> Apellido: <input class="form-input" type="text" name="apellido" id="" required placeholder="Ej: Galperín"> </div>
 
                     <div> E-mail: <input class="form-input" type="email" name="email" id="" required placeholder="Ej: marcos@gmail.com"> </div>
 
@@ -33,7 +33,7 @@
 
                     <div> Foto de perfil: <input class="form-input" type="file" name="portada" id="" accept="image/png, image/jpg, image/jpeg"> </div>
 
-                    <div> Contraseña: <input class="form-input" type="password" name="contraseña" id="" required placeholder="*****"> </div>
+                    <div> Contraseña: <input class="form-input" type="password" name="passwords" id="" required placeholder="*****"> </div>
 
                     <div> Confirmar contraseña: <input class="form-input" type="password" name="confirContra" id="" required placeholder="*****"> </div>
 
