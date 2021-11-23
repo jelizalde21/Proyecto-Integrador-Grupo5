@@ -56,16 +56,7 @@ const detailController = {
             return res.redirect('/')
         }
     },
-    /*edit: function (req, res) {
-        if (req.session.usuario != undefined) {
-            db.Post.findByPk(req.params.id,)
-            .then(posts => {
-                return res.render('detailEdit', {posts: posts})
-            })
-        } else {
-            return res.redirect('/login')
-        }
-    },*/
+   
     update: function(req, res) {
         let id = req.params.id
         let fecha = new Date()
@@ -82,7 +73,7 @@ const detailController = {
         })
         .then(posteo => {
             /*res.send(posteo)*/
-            res.redirect("/detail/post/id/" + posteo.id) 
+            res.redirect("/detail/post/id/" + id) 
         })
         .catch(err => {
             console.log(err)
