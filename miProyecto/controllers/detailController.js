@@ -28,8 +28,8 @@ const detailController = {
     create: (req, res) => { 
         if (req.session.usuario) { //chequea que haya un usuario logueado
             db.Post.create({ //un post con los siguientes datos
-                    picture: req.file.filename, //datos en input
-                    caption: req.body.caption,
+                    picture: req.file.filename, 
+                    caption: req.body.pie,  //datos en input "pie" = name 
                     user_post_id: req.session.usuario.id //si está logueado, en user_post_id, va a poner el id del usuario logueado
                 })
                 .then(posteo => {
