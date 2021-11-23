@@ -23,5 +23,6 @@ router.get('/post/id/:id', detailController.post);
 router.post('/add', upload.single("picture"), detailController.create);
 router.post('/edit/:id', upload.single("picture"), detailController.update)
 router.post('/delete/:id', detailController.delete)
+router.post('/comentarios', detailController.comentarios)
 
 module.exports = router;

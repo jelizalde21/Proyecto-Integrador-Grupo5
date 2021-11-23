@@ -116,7 +116,17 @@ const detailController = {
                     post: post
                 });
             })
-    }
+    },
+    // metodo para agregar comentarios
+    comentarios: function (req,res) {
+        if (req.session.usuario) { // si esta logueado agregar comentario // esto no funciona
+            res.render('detailPost',)
+        } else {
+            return res.redirect('/login') // si no esta logueado mandar a login
+        }
+    },
+
+
 
 }
 
