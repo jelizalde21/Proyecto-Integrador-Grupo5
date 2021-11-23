@@ -23,8 +23,11 @@
                     </div>
                     <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
                         <div class="uk-flex uk-flex-middle">
-                            <h3 class="uk-margin-remove"><%= user.nombre %></h3>
+                            <h2 class="uk-margin-remove"><%= user.username %></h2>
                             <button class="uk-button uk-button-small uk-button-primary uk-margin-left">Seguir</button>
+                        </div>
+                        <div>
+                            <h4 class="uk-margin-remove"><%= user.nombre %> <%= user.apellido %></h4>
                         </div>
                         <div>
                             <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
@@ -46,7 +49,7 @@
                         <div class="uk-card uk-card-hover uk-card-body uk-flex uk-flex-column uk-flex-middle uk-flex-center ">
                             <a href="/detail/post/id/<%= user.posteosU[i].id %>" class="link-detalle">
                                 <img src="/images/<%= user.posteosU[i].picture %> " alt="foto de perfil" class="foto-perfil">
-                                <p class="uk-text-center"> <%= user.posteosU[i].username %> </p>
+                                <p class="uk-text-center"> <%= user.posteosU[i].caption %> </p>
                             </a>
                         </div>
                         <% } %>
