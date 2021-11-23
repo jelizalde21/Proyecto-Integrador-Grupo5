@@ -3,6 +3,9 @@ const Op = db.Sequelize.Op;
 
 const detailController = {
     index: (req, res) => { 
+        if(req.session.usuario && req.session.usuario.id == req.params.id){
+            res.redirect('/profile')
+        }
         db.User.findByPk(req.params.id,{
             include: [{
                 association: 'posteosU'
@@ -99,8 +102,12 @@ const detailController = {
     post: (req, res) => { 
         db.Post.findByPk(req.params.id,{
             include: [{
-                all:true,
-                nested: true}],
+                association:'usuarios'},{
+                    association: 'comentarios',
+                    include:{
+                        association: 'comentarios1'
+                    }
+                }],
             
             }).then(post => {
                 res.render('detailPost', {
@@ -110,15 +117,41 @@ const detailController = {
     },
     // metodo para agregar comentarios
     comentarios: function (req,res) {
-        if (req.session.usuario) { // si esta logueado agregar comentario // esto no funciona
-            res.render('detailPost',)
-        } else {
-            return res.redirect('/login') // si no esta logueado mandar a login
-        }
+     if (!req.session.usuario){
+         res.redirect('/login');
+     }
+     db.Comment.create({
+        comentario: req.body.comentarios,
+        comment_post_id: req.params.id,
+        comment_user_id: req.session.usuario.id,
+     })
+     .then(resultado => {
+         res.redirect('/detail/post/id/'+ req.params.id)
+     })
     },
 
-
+    
 
 }
 
 module.exports = detailController
+
+//if (req.session.usuario) { // si esta logueado agregar comentario // esto no funciona
+//    res.render('detailPost',)
+//} else {
+//  return res.redirect('/login') // si no esta logueado mandar a login
+//}
+
+//db.User.findByPk(req.params.id,{
+//    include: [
+//       {association: 'posteosU'}, 
+//        {association: 'comentariosU'}
+//    ],
+//    order: [
+//        ["createdAt", "DESC"]
+//    ],  
+//    })
+//
+//    .then(comentarios => {
+//        res.render('detailPost', { });
+//    })

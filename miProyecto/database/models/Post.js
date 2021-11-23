@@ -41,7 +41,7 @@ module.exports = (sequelize, dataTypes) => {
         });
         Post.hasMany(models.Comment, { //Post tiene muchos Comment
             as: "comentarios",
-            foreignKey: "id"
+            foreignKey: "comment_post_id"
         }); 
     }  
     return Post

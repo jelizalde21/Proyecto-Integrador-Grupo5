@@ -1,3 +1,4 @@
+DROP database if exists myBooze;
 CREATE DATABASE IF NOT exists myBooze;
 
 USE myBooze;
@@ -32,7 +33,7 @@ updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 CREATE TABLE comments (
 id INT UNSIGNED AUTO_INCREMENT,
 comentario VARCHAR (500),
-fecha DATE NOT NULL,
+fecha DATE,
 comment_post_id INT UNSIGNED NOT NULL,
 comment_user_id INT UNSIGNED NOT NULL,
 PRIMARY KEY (id),
