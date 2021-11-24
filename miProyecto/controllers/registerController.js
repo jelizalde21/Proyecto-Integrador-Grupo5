@@ -73,7 +73,7 @@ const registerController = {
                                         username: req.body.usuario,
                                         email: req.body.email,
                                         passwords: passEncriptada,
-                                        picture: 'fotodefault.jpeg',
+                                        picture: 'fotodefault.png',
                                         fecha: req.body.fecha
                                     }).then(user => {
                                         req.session.usuario = user

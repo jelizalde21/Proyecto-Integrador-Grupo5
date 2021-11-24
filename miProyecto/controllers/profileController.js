@@ -12,6 +12,9 @@ const profileController = {
                 }, {
                     association: 'comentariosU'
                 }],
+                order: [
+                    ['posteosU', 'created_at' , 'DESC']
+                ]
                 
     
                 }).then(users => {
