@@ -28,6 +28,7 @@ const detailController = {
             return res.redirect('/')
         }
     },
+    
     create: (req, res) => { 
         if (req.session.usuario) { //chequea que haya un usuario logueado
             db.Post.create({ //un post con los siguientes datos
@@ -49,6 +50,7 @@ const detailController = {
             })
         }
     },
+
     edit: function (req, res) {
         if (req.session.usuario) {
             db.Post.findByPk(req.params.id)
@@ -83,6 +85,7 @@ const detailController = {
             res.send(err)
         })
     },
+
     delete: function(req, res){
         let id = req.params.id
         db.Post.destroy({
@@ -115,6 +118,7 @@ const detailController = {
                 });
             })
     },
+
     // metodo para agregar comentarios
     comentarios: function (req,res) {
      if (!req.session.usuario){
