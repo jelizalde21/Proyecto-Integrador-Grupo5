@@ -18,7 +18,7 @@ const controller = {
                 }],
                 limit: 10,
                 order: [
-                    ['fecha', 'DESC'],
+                    ['created_at', 'DESC'],
                 ]
             })
             .then(posts => {

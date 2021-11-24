@@ -12,8 +12,10 @@ const detailController = {
             }, {
                 association: 'comentariosU'
             }],
+            order: [
+                ['posteosU', 'created_at' , 'DESC'] 
+            ]
             
-
             }).then(user => {
                 res.render('detailUser', {
                     user: user
@@ -111,7 +113,10 @@ const detailController = {
                         association: 'comentarios1'
                     }
                 }],
-            
+                
+                order: [
+                    ['comentarios', 'created_at' , 'DESC']
+                 ]
             }).then(post => {
                 res.render('detailPost', {
                     post: post
@@ -129,6 +134,7 @@ const detailController = {
         comment_post_id: req.params.id,
         comment_user_id: req.session.usuario.id,
      })
+     
      .then(resultado => {
          res.redirect('/detail/post/id/'+ req.params.id)
      })
