@@ -2,7 +2,7 @@ const db = require('../database/models'); // relaciona controlador con modelos
 const Op = db.Sequelize.Op;
 const bcrypt = require('bcryptjs');
 
-
+/* Requiere información del usuario vinculado a la session */
 const profileController = {
         index: (req, res) => { 
             db.User.findByPk(req.session.usuario.id,{
@@ -24,6 +24,9 @@ const profileController = {
                     });
                 })
         },
+
+    /*Editar Perfil */
+    
     edit: function (req, res) {
         if(req.session.usuario){
             db.User.findByPk(req.params.id)
